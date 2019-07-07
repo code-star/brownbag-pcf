@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Pivotal CloudFoundry - an introduction</title>
+		<title>Pivotal Cloud Foundry - an introduction</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -28,10 +28,10 @@
 			<div class="slides">
 				<section data-markdown data-separator="\n---\n" data-separator-vertical="\n--\n">
 					<script type="text/template">
-						## Pivotal CloudFoundry
+						## Pivotal Cloud Foundry
 						### An Introduction
 						---
-						What is Pivotal CloudFoundry
+						What is Pivotal Cloud Foundry
 						* Platform as a Service
 						* Cloud agnostic - AWS, Azure, GCP, OpenStack, ...
 						* Based on Open Source: Cloud Foundry
@@ -99,7 +99,89 @@
 
 						---
 						### Cloud Foundry Application Runtime
+						* Cloud Controller
+						* GoRouter
+						* Diego
+						* Loggregator
+						* Blobstore
+						* Buildpacks
 
+						Note:
+						Diego handles container scheduling, running and monitoring, on both Linux and Windows
+						---
+						### Diego
+						* Container management system
+						* Self healing
+						* Distributes load across available cells
+
+
+						--
+						### Diego - run app request
+						![Diego Components](../images/oss-diego-architecture-1.png)
+
+						<p>image sources: https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html</p>
+						<!-- .element: class="img-attribution" -->
+						--
+						### Diego - activate auctioneer
+						![Diego Components](../images/oss-diego-architecture-2.png)
+
+						<p>image sources: https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html</p>
+						<!-- .element: class="img-attribution" -->
+						--
+						### Diego - auction
+						![Diego Components](../images/oss-diego-architecture-3.png)
+
+						<p>image sources: https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html</p>
+						<!-- .element: class="img-attribution" -->
+						--
+						### Diego - container creation
+						![Diego Components](../images/oss-diego-architecture-4.png)
+
+						<p>image sources: https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html</p>
+						<!-- .element: class="img-attribution" -->
+						--
+						### Diego - emit new route
+						![Diego Components](../images/oss-diego-architecture-5.png)
+
+						<p>image sources: https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html</p>
+						<!-- .element: class="img-attribution" -->
+						--
+						### Diego - send logs
+						![Diego Components](../images/oss-diego-architecture-6.png)
+
+						<p>image sources: https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html</p>
+						<!-- .element: class="img-attribution" -->
+						---
+						### Buildpacks
+						* Support for several types of applications / languages
+							*  Go, HWC, .Net Core, NGINX, Node.js, R
+							* Java: Grails, Play, Spring, and any other JVM based language/framework
+							* PHP: Cake, Symphony, Zend, NGINX, or HTTPD
+							* Python: Django or Flask
+							* Ruby: Ruby, JRuby, Rack, Rails, or Sinatra
+						    * Staticfile: HTML, CSS, JavaScript, or NGINX
+						* HTTP(S) or TCP/UDP on 1 port
+						* Websocket support
+						--
+						### Buildpacks
+						* Used to create `droplets` that can be deployed to diego cells
+						* SDKs available to interact with CF Services
+						* Environment variables to inject runtime configuration
+							* VCAP_SERVICES
+						---
+						### Cloud Foundry shared services
+						* Login Server
+						* Open Service Broker API
+						* CredHub
+						* Isolation Segments
+
+						--
+						### Service Broker
+						![Managed Services](../images/managed-services.png)
+						<!-- .element: style="padding-left: 10%;padding-right: 10%;" -->
+
+						<p>image source: https://docs.cloudfoundry.org/services/overview.html</p>
+						<!-- .element: class="img-attribution" -->
 					</script>
 				</section>
 				<section data-markdown>
