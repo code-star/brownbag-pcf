@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+		<link rel="stylesheet" href="css/slides.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -26,11 +27,102 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown data-separator="\n---\n" data-separator-vertical="\n--\n">
-					Pivotal CloudFoundry - An Introduction
+					<script type="text/template">
+						## Pivotal CloudFoundry
+						### An Introduction
+						---
+						What is Pivotal CloudFoundry
+						* Platform as a Service
+						* Cloud agnostic - AWS, Azure, GCP, OpenStack, ...
+						* Based on Open Source: Cloud Foundry
+						* Service integration options
+						* On-premise options
+						* Local development option
+						--
+						### Platform as a Service
+						* Managed environment to deploy and run your code
+						* Lives on top of provided Infrastructure
+						* Provides CLI, Web interface, and SDKs to interact
+						* With the platform (manage, configure, monitor)
+						* With other services (on the PaaS, but also outside)
+						--
+						### Cloud Agnostic
+						* Creates Platform layer on top of IaaS
+						![PaaS versus IaaS](../images/power-of-platform.png)
 
-					--
+						<p>image source: https://docs.pivotal.io/pivotalcf/2-6/concepts/overview.html</p> <!-- .element: class="img-attribution" -->
+						---
+						### Open Source: Cloud Foundry
+						![Cloud Foundry](../images/pcf-commercialization.png)
+						<!-- .element: style="padding-left: 20%;padding-right: 20%;" -->
 
-					Slide2
+						<p>image source: https://docs.pivotal.io/pivotalcf/2-6/concepts/overview.html</p> <!-- .element: class="img-attribution" -->
+						---
+						### BOSH
+						* Unifies release engineering, deployment, and lifecycle management
+						* Can manage small and large scale clouds - hundreds of VMs
+						* Monitoring, failure recovery, software updates
+						* Multiple IaaS providers
+						* Cloud Provider Interface to add more IaaS
+
+						Note:
+						BOSH is a project that unifies release engineering, deployment, and lifecycle management of
+						small and large-scale cloud software. BOSH can provision and deploy software over hundreds of VMs.
+						It also performs monitoring, failure recovery, and software updates with zero-to-minimal downtime.
+						BOSH supports multiple Infrastructure as a Service (IaaS) providers like VMware vSphere, Google Cloud Platform,
+						Amazon Web Services EC2, Microsoft Azure, and OpenStack. There is a Cloud Provider Interface (CPI)
+						that enables users to extend BOSH to support additional IaaS providers such as Apache CloudStack and VirtualBox.
+						--
+						### BOSH Architecture
+						![BOSH Architecture](../images/bosh-architecture.png)
+						<!-- .element: style="padding-left: 25%;padding-right: 25%;" -->
+
+						<p>image source: https://bosh.io/docs/bosh-components/</p>
+						<!-- .element: class="img-attribution" -->
+
+						--
+						### BOSH Architecture (2)
+						* Director - orchestrator
+						* CPI - Cloud Provider Interface
+						* Agent - on each VM
+						* Health Monitor
+						* NATS - Lightweight pub-sub message bus
+						* Data store - database with desired state
+						* Blobstore - release definitions and packaged artifacts
+
+						Note:
+						* Director receives instructions via CLI or scheduled processes
+						* CPI  - used to interact with the IaaS provider
+						* Agent performs provisioning and monitoring tasks
+						* Health Monitor - sends alerts when issues are detected, and can instruct Resurrector to recreate VMs
+						* NATS allows communication between Director, Agents, and Health Monitor
+
+						---
+						### Cloud Foundry Application Runtime
+
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						#### CF Application or CF Container Runtime
+						* CF Application Runtime
+							* For cloud-native,12-factor applications
+						* CF Container Runtime
+							* built using Kubernetes and CF BOSH
+
+						If you need more flexibility and developer-built containers for apps, or are using pre-packaged
+						apps delivered in a container, using CF Container Runtime will give you control over application delivery
+
+					</script>
+				</section>
+				<section>
+					<h4>Resources</h4>
+					<ul>
+						<li><a href="https://www.cloudfoundry.org">https://www.cloudfoundry.org</a></li>
+						<li><a href="https://pivotal.io">https://pivotal.io</a></li>
+						<li><a href="https://docs.pivotal.io">https://docs.pivotal.io</a></li>
+						<li>Pluralsight - several Pivotal Cloud Foundry courses</li>
+					</ul>
 				</section>
 			</div>
 		</div>
