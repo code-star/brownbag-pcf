@@ -184,7 +184,7 @@
 						<!-- .element: class="img-attribution" -->
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-separator="\n---\n" data-separator-vertical="\n--\n">
 					<script type="text/template">
 						#### CF Application or CF Container Runtime
 						* CF Application Runtime
@@ -195,6 +195,17 @@
 						If you need more flexibility and developer-built containers for apps, or are using pre-packaged
 						apps delivered in a container, using CF Container Runtime will give you control over application delivery
 
+						---
+						### Demo
+						```
+						cf login
+						API endpoint> https://api.run.pivotal.io
+						Email> [email-address]
+						Password> [password]
+
+                        cd helloworld
+                        cf push
+						```
 					</script>
 				</section>
 				<section>
