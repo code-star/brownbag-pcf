@@ -31,7 +31,7 @@
 						## Pivotal Cloud Foundry
 						### An Introduction
 						---
-						What is Pivotal Cloud Foundry
+                        What is Pivotal Cloud Foundry
 						* Platform as a Service
 						* Cloud agnostic - AWS, Azure, GCP, OpenStack, ...
 						* Based on Open Source: Cloud Foundry
@@ -186,7 +186,7 @@
 				</section>
 				<section data-markdown data-separator="\n---\n" data-separator-vertical="\n--\n">
 					<script type="text/template">
-						#### CF Application or CF Container Runtime
+						### CF Application or CF Container
 						* CF Application Runtime
 							* For cloud-native,12-factor applications
 						* CF Container Runtime
@@ -194,18 +194,19 @@
 
 						If you need more flexibility and developer-built containers for apps, or are using pre-packaged
 						apps delivered in a container, using CF Container Runtime will give you control over application delivery
+					</script>
+				</section>
+				<section data-markdown data-separator="\n---\n" data-separator-vertical="\n--\n">
+					<script type="text/template">
+                        ### Demo
+                        * Perform a `cf login`
+                        * Go to helloworld folder
+                        * Perform a `cf push`
+                        * Show application in web console
+                        * Show scaling via web
+                        * Show services marketplace and where to bind app to services
+                        * Show application status via commandline (cf apps)
 
-						---
-						### Demo
-						```
-						cf login
-						API endpoint> https://api.run.pivotal.io
-						Email> [email-address]
-						Password> [password]
-
-                        cd helloworld
-                        cf push
-						```
 					</script>
 				</section>
 				<section>
