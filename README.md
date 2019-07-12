@@ -17,6 +17,11 @@ Pressing `s` will open a separate window with the speaker notes.
 ## Used to demo
 * https://console.run.pivotal.io/
 
+Helloworld application taken from Pluralsight Cloud Foundry for Developers
+(cloud-foundry-developers/1-cloud-foundry-developers-m1-exercise-files/before/helloworld)
+Make sure to change the application name in the manifest.yml to a unique name before
+pushing to run.pivotal.io
+
 Command line:
 * Perform a `cf login`
 * Go to helloworld folder
