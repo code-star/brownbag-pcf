@@ -16,3 +16,12 @@ Pressing `s` will open a separate window with the speaker notes.
 
 ## Used to demo
 * https://console.run.pivotal.io/
+
+Command line:
+* Perform a `cf login`
+* Go to helloworld folder
+* Perform a `cf push`
+* Show application in web console
+* Show scaling via web
+* Show services marketplace and where to bind app to services
+* Show application status via commandline (cf apps)
