@@ -42,9 +42,10 @@
 						### Platform as a Service
 						* Managed environment to deploy and run your code
 						* Lives on top of provided Infrastructure
-						* Provides CLI, Web interface, and SDKs to interact
-						* With the platform (manage, configure, monitor)
-						* With other services (on the PaaS, but also outside)
+						* Provides CLI, Web interface
+						* Provides SDKs to interact
+							* With the platform (manage, configure, monitor)
+							* With other services (on the PaaS, but also outside)
 						--
 						### Cloud Agnostic
 						* Creates Platform layer on top of IaaS
@@ -99,12 +100,10 @@
 
 						---
 						### Cloud Foundry Application Runtime
-						* Cloud Controller
-						* GoRouter
-						* Diego
-						* Loggregator
-						* Blobstore
-						* Buildpacks
+						![Cloud Foundry](../images/pcf-commercialization.png)
+						<!-- .element: style="padding-left: 20%;padding-right: 20%;" -->
+
+						<p>image source: https://docs.pivotal.io/pivotalcf/2-6/concepts/overview.html</p> <!-- .element: class="img-attribution" -->
 
 						Note:
 						Diego handles container scheduling, running and monitoring, on both Linux and Windows
@@ -170,10 +169,10 @@
 							* VCAP_SERVICES
 						---
 						### Cloud Foundry shared services
-						* Login Server
-						* Open Service Broker API
-						* CredHub
-						* Isolation Segments
+						![Cloud Foundry](../images/pcf-commercialization.png)
+						<!-- .element: style="padding-left: 20%;padding-right: 20%;" -->
+
+						<p>image source: https://docs.pivotal.io/pivotalcf/2-6/concepts/overview.html</p> <!-- .element: class="img-attribution" -->
 
 						--
 						### Service Broker
@@ -188,7 +187,7 @@
 					<script type="text/template">
 						### CF Application or CF Container
 						* CF Application Runtime
-							* For cloud-native,12-factor applications
+							* For cloud-native, [12-factor](https://12factor.net/) applications
 						* CF Container Runtime
 							* built using Kubernetes and CF BOSH
 
@@ -216,6 +215,7 @@
 						<li><a href="https://pivotal.io">https://pivotal.io</a></li>
 						<li><a href="https://docs.pivotal.io">https://docs.pivotal.io</a></li>
 						<li>Pluralsight - several Pivotal Cloud Foundry courses</li>
+						<li><a href="https://12factor.net/">https://12factor.net/</a></li>
 					</ul>
 				</section>
 			</div>
